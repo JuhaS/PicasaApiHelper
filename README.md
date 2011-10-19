@@ -14,7 +14,7 @@ This library and the sample code is Open Source under the [Apache 2.0 License](h
 
 **Limitations:**
 
-* Only works on browsers that support fross site ajax calls (limitation of jQuery.ajax() ). 
+* Only works on browsers that support cross site ajax calls (limitation of jQuery.ajax() ). 
 
 ## How to use PicasaApiHelperJS
 
