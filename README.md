@@ -20,26 +20,25 @@ This library and the sample code is Open Source under the [Apache 2.0 License](h
 
 This helper provides two fuctions. Both do the same thing in different ways. 
 
-* blockingParseLinks(picasaUserName, picasaCollectionName): This function takes two arguments that it uses to form the url for the request. It returns an list of url-caption pairs in a dictionary.
+* **blockingParseLinks(picasaUserName, picasaCollectionName)**: This function takes two arguments that it uses to form the url for the request. It returns an list of url-caption pairs in a dictionary.
 
-* parseLinks(picasaUserName, picasaCollectionName, cb): This is asynchronous version of the function. The callback (cb) is initiated with the list or url-caption pairs after the data is received and parsed.
+* **parseLinks(picasaUserName, picasaCollectionName, cb)**: This is asynchronous version of the function. The callback (cb) is initiated with the list or url-caption pairs after the data is received and parsed.
 
 ## How to use PicasaApiHelperJS
 
 
+            // Setup
             picasaUserName = "testUser";
             picasaCollectionName = "testAlbum";
-            links = blockingParseLinks(picasaUserName, picasaCollectionName);
-            
-            
             
             // Blocking way: Show first 5 photos on bottom of the page.
+            links = blockingParseLinks(picasaUserName, picasaCollectionName);
             for (var i = 0; i<5 ; i++) {
 	            $('body').append('<div><p>' + links[i].caption + '<p/><img src=\"' + links[i].url + '\"/></div>');
             }
             
             // Non-blocking way: Show last 5 photos on bottom of the page .
-            links = blockingParseLinks(picasaUserName, picasaCollectionName, function (links) {
+            parseLinks(picasaUserName, picasaCollectionName, function (links) {
                     for (var i = links.length; i<links.length-5 ; i--) {
 	                    $('body').append('<div><p>' 
 	                      + links[i].caption 
@@ -49,12 +48,9 @@ This helper provides two fuctions. Both do the same thing in different ways.
                     }
                 });
 
+## More info
 
-## More Info
-
-## Contributing Changes
-
-Feel free to send modify the code.
+* All contributions are welcome.
 
 ## Disclaimer
 
