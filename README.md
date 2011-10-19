@@ -16,11 +16,26 @@ This library and the sample code is Open Source under the [Apache 2.0 License](h
 
 * Only works on browsers that support cross site ajax calls (limitation of jQuery.ajax() ). 
 
+## Features
+
+This helper provides two fuctions. Both do the same thing in different ways. 
+* blockingParseLinks(picasaUserName, picasaCollectionName): This function takes two arguments that it uses to form the url for the request. It returns an list of url-caption pairs in a dictionary.
+* parseLinks(picasaUserName, picasaCollectionName, cb): This is asynchronous version of the function. The callback (cb) is initiated with the list or url-caption pairs after the data is received and parsed.
+
 ## How to use PicasaApiHelperJS
 
+'
+picasaUserName = "suomalainen.juha";
+picasaCollectionName = "Gallery";
+links = blockingParseLinks(picasaUserName, picasaCollectionName);
+
+// Show first 5 photos.
+for (var i = 0; i<5 ; i++) {
+	$('body').append('<div><p>' + links[i].caption + '<p/><img src=\"' + links[i].url + '\"/></div>');
+}
+'
 
 ## More Info
-* [BlackBerry WebWorks SDK for Tablet OS](http://us.blackberry.com/developers/tablet/webworks.jsp) - Getting Started guides, SDK downloads, code signing keys.
 
 ## Contributing Changes
 
