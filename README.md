@@ -10,7 +10,7 @@ This library and the sample code is Open Source under the [Apache 2.0 License](h
 
 **Requirements:**
 
-* JQuery
+* JQuery 
 
 **Limitations:**
 
