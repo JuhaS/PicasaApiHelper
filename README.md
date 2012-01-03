@@ -39,7 +39,7 @@ This helper provides two fuctions. Both do the same thing in different ways.
             
             // Non-blocking way: Show last 5 photos on bottom of the page .
             parseLinks(picasaUserName, picasaCollectionName, function (links) {
-                    for (var i = links.length; i<links.length-5 ; i--) {
+                    for (var i = links.length; i>links.length-5 ; i--) {
 	                    $('body').append('<div><p>' 
 	                      + links[i].caption 
 	                      + '<p/><img src=\"' 
